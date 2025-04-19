@@ -151,6 +151,7 @@ return { -- LSP Configuration & Plugins
             '--background-index',
             '--offset-encoding=utf-16',
           },
+          root_dir = require('lspconfig.util').root_pattern('compile_commands.json', 'compile_flags.txt', '.git', 'CMakeLists.txt', 'Makefile'),
         },
         -- gopls = {},
         pyright = {},
