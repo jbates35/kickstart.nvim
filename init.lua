@@ -786,7 +786,7 @@ do
     notify_on_error = false,
     format_on_save = function(bufnr)
       -- Disable format_on_save for languages with no well-standardized style
-      local disable_filetypes = { c = true, cpp = true }
+      local disable_filetypes = { }
       if disable_filetypes[vim.bo[bufnr].filetype] then return nil end
       return { timeout_ms = 3000, lsp_format = 'fallback' }
     end,
@@ -987,6 +987,10 @@ require 'custom.plugins.persistence'
 require 'custom.plugins.lazygit'
 require 'custom.plugins.colorizer'
 require 'custom.plugins.visual-multi'
+
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#99bbbb" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff8800" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#99bbbb" })
 
 -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 --
