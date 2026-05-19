@@ -1,0 +1,2 @@
+-- Autoformat is now handled by conform.nvim in init.lua (Section 6)
+-- This file is intentionally empty.

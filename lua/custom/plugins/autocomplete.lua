@@ -1,0 +1,2 @@
+-- Autocomplete is now handled by blink.cmp in init.lua (Section 7)
+-- This file is intentionally empty.
