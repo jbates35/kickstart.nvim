@@ -559,11 +559,15 @@ do
 
   -- It's also possible to pass additional configuration options.
   --  See `:help telescope.builtin.live_grep()` for information about particular keys
-  vim.keymap.set('n', '<leader>s/', function()
+  vim.keymap.set(
+    'n',
+    '<leader>s/',
+    function()
       builtin.live_grep {
         grep_open_files = true,
         prompt_title = 'Live Grep in Open Files',
-      }      end,
+      }
+    end,
     { desc = '[S]earch [/] in Open Files' }
   )
 
@@ -693,9 +697,7 @@ do
       -- when Neovim was opened from there but the file is in a subdirectory.
       on_new_config = function(config, root_dir)
         local flag = '--compile-commands-dir=' .. root_dir
-        if not vim.tbl_contains(config.cmd, flag) then
-          table.insert(config.cmd, flag)
-        end
+        if not vim.tbl_contains(config.cmd, flag) then table.insert(config.cmd, flag) end
       end,
     },
     -- gopls = {},
@@ -786,7 +788,7 @@ do
     notify_on_error = false,
     format_on_save = function(bufnr)
       -- Disable format_on_save for languages with no well-standardized style
-      local disable_filetypes = { }
+      local disable_filetypes = {}
       if disable_filetypes[vim.bo[bufnr].filetype] then return nil end
       return { timeout_ms = 3000, lsp_format = 'fallback' }
     end,
@@ -978,6 +980,7 @@ require 'custom.plugins.autocomplete'
 require 'custom.plugins.autoformat'
 require 'custom.plugins.barbar'
 require 'custom.plugins.copilot'
+require 'custom.plugins.ayu'
 require 'custom.plugins.copilot-chat'
 require 'custom.plugins.harpoon'
 require 'custom.plugins.toggleterm'
@@ -988,9 +991,9 @@ require 'custom.plugins.lazygit'
 require 'custom.plugins.colorizer'
 require 'custom.plugins.visual-multi'
 
-vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#99bbbb" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff8800" })
-vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#99bbbb" })
+vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#99bbbb' })
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#ff8800' })
+vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#99bbbb' })
 
 -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 --
