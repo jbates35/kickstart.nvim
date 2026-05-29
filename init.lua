@@ -987,7 +987,7 @@ require 'custom.plugins.toggleterm'
 require 'custom.plugins.refactoring'
 require 'custom.plugins.trouble'
 require 'custom.plugins.persistence'
-require 'custom.plugins.lazygit'
+-- require 'custom.plugins.lazygit'
 require 'custom.plugins.colorizer'
 require 'custom.plugins.visual-multi'
 
@@ -1001,4 +1001,4 @@ vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#99bbbb' })
 -- end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=2 sts=2 sw=2
